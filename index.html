@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Love</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('https://source.unsplash.com/1600x900/?love,romantic,couple') no-repeat center center/cover;
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            color: white;
+            flex-direction: column;
+            padding: 20px;
+        }
+        .container {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 600px;
+        }
+        h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 20px;
+            margin-bottom: 20px;
+            display: none;
+        }
+        button {
+            padding: 12px 24px;
+            font-size: 18px;
+            background: #ff4d6d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #ff1e4d;
+        }
+        .message {
+            font-size: 22px;
+            font-weight: bold;
+            margin-top: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>To My One and Only</h1>
+        <p id="intro">You are my heart, my soul, my everything. Every moment with you is a gift, and I am so grateful for your love.</p>
+        <button onclick="showMessage()">Click Me</button>
+        <p id="message" class="message">My love, you are the light in my darkest days, my safe place, my happiness. I love you more than words can ever express. No matter what happens, I will always be by your side. You are my forever. ❤️</p>
+    </div>
+    
+    <script>
+        function showMessage() {
+            document.getElementById('message').style.display = 'block';
+            document.getElementById('intro').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
