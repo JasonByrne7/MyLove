@@ -30,7 +30,6 @@
         p {
             font-size: 20px;
             margin-bottom: 20px;
-            display: none;
         }
         button {
             padding: 12px 24px;
@@ -51,6 +50,16 @@
             margin-top: 20px;
             display: none;
         }
+        .slideshow {
+            display: none;
+            margin-top: 20px;
+        }
+        .slide {
+            display: none;
+            width: 100%;
+            max-width: 500px;
+            border-radius: 10px;
+        }
     </style>
 </head>
 <body>
@@ -59,13 +68,37 @@
         <p id="intro">You are my heart, my soul, my everything. Every moment with you is a gift, and I am so grateful for your love.</p>
         <button onclick="showMessage()">Click Me</button>
         <p id="message" class="message">My love, you are the light in my darkest days, my safe place, my happiness. I love you more than words can ever express. No matter what happens, I will always be by your side. You are my forever. ❤️</p>
+        
+        <div class="slideshow" id="slideshow">
+            <img class="slide" src="https://source.unsplash.com/500x300/?couple,happiness" alt="Love Image 1">
+            <img class="slide" src="https://source.unsplash.com/500x300/?romantic,date" alt="Love Image 2">
+            <img class="slide" src="https://source.unsplash.com/500x300/?holding-hands" alt="Love Image 3">
+        </div>
     </div>
     
     <script>
         function showMessage() {
             document.getElementById('message').style.display = 'block';
             document.getElementById('intro').style.display = 'none';
+            document.getElementById('slideshow').style.display = 'block';
+            startSlideshow();
+        }
+
+        function startSlideshow() {
+            let index = 0;
+            const slides = document.getElementsByClassName('slide');
+            function showNextSlide() {
+                for (let i = 0; i < slides.length; i++) {
+                    slides[i].style.display = 'none';
+                }
+                slides[index].style.display = 'block';
+                index = (index + 1) % slides.length;
+                setTimeout(showNextSlide, 2000); // Change image every 2 seconds
+            }
+            showNextSlide();
         }
     </script>
 </body>
 </html>
+
+
